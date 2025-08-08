@@ -8,7 +8,20 @@ function agregarAmigo(){
     } else{
         amigos.push(nuevoAmigo);
         document.getElementById('amigo').value = '';
+        actualizarLista(); 
     }
     console.log(nuevoAmigo);
     console.log(amigos);
+}
+
+function actualizarLista(){
+    let lista = document.getElementById('listaAmigos');
+    lista.innerHTML = '';
+    for (const amigo of amigos){
+        console.log(amigo)
+        let nuevoAmigo = document.createElement('li');
+        nuevoAmigo.textContent = amigo;
+        lista.appendChild(nuevoAmigo);
+    }
+    
 }
